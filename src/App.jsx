@@ -1,35 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [phase, setPhase] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {phase === 0 && <InputItems setPhase={setPhase} />}
     </>
-  )
+  );
 }
 
-export default App
+function InputItems({ setPhase }) {
+  const [items, setItems] = useState([{ input: "", id: generateNewID() }]);
+
+  const handleAddItem = () => {
+    setItems((prev) => [...prev, { input: "", id: generateNewID() }]);
+  };
+
+  const handleInputChange = (event, id) => {
+    setItems((prev) =>
+      prev.map((e) => {
+        if (e.id === id)
+          return {
+            input: event.target.value,
+            id: e.id,
+          };
+        else return e;
+      }
+    )
+    );
+  };
+
+  return (
+    <div id="input-items" className="container m-4 p-3 border rounded">
+      <h2>Enter your items below.</h2>
+      <button className="btn btn-primary" onClick={handleAddItem}>
+        Add an item
+      </button>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id} className="d-block m-3">
+            <input
+              type="text"
+              value={item.input}
+              onChange={(e) => handleInputChange(e, item.id)}
+            />
+            <button
+              className="btn btn-danger"
+              onClick={() =>
+                setItems((prev) => prev.filter((e) => e.id !== item.id))
+              }
+            >
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+      <button
+        type="submit"
+        className="btn btn-primary"
+        onClick={() => setPhase(1)}
+      >
+        Next
+      </button>
+    </div>
+  );
+}
+
+function generateNewID() {
+  return "id" + Math.random().toString(16).slice(2);
+}
+
+export default App;
