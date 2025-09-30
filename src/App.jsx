@@ -31,7 +31,7 @@ function App() {
             {phase === 1 && (
               <Ranker {...{ items, setItems, rankThoughts, setPhase }} />
             )}
-            {phase === 2 && <Results items={items} />}
+            {phase === 2 && <Results {...{ items, setPhase }} />}
           </div>
         </div>
       </div>

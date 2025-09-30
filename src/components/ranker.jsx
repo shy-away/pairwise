@@ -31,7 +31,8 @@ export default function Ranker({ items, setItems, rankThoughts, setPhase }) {
     <div id="ranker" className="container-fluid text-center">
       <div className="row justify-content-between">
         <div className="col-12">
-          <h2>{rankThoughts ? rankThoughts : "Pick one..."}</h2>
+          <h2 className="my-4">{rankThoughts ? rankThoughts : "Pick one..."}</h2>
+          <p className="text-bg-body-secondary"><em>Question {currentPair + 1} of {indexPairs.current.length}</em></p>
         </div>
 
         {indexPairs.current[currentPair].map((itemIndex, i) => (
@@ -45,12 +46,14 @@ export default function Ranker({ items, setItems, rankThoughts, setPhase }) {
           </button>
         ))}
 
-        <button
-          className="btn btn-sm btn-secondary"
-          onClick={() => setPhase(0)}
-        >
-          Back
-        </button>
+        <div className="col-12">
+          <button
+            className="btn btn-sm btn-secondary"
+            onClick={() => setPhase(0)}
+          >
+            Back
+          </button>
+        </div>
       </div>
     </div>
   );
