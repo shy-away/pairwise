@@ -26,11 +26,13 @@ export default function InputItems({
   };
 
   const handleNext = () => {
-    if (items.length >= 2) setPhase(PHASES.RANK);
-    else alert(`Please input at least 2 items to compare.`);
+    if (items.length >= 2) {
+      if (items.filter((item) => item.input === "").length === 0)
+        setPhase(PHASES.RANK);
+      else alert(`You have at least one empty item.`);
+    } else alert(`Please input at least 2 items to compare.`);
     {
       // TODO: replace above alert with proper Bootstrap modal?
-      // TODO: verify that no items have input of empty string
     }
   };
 

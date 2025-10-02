@@ -7,6 +7,7 @@ import About from "./components/about";
 import { PHASES } from "./utils/enums";
 
 // TODO: Create nav component
+// TODO: Create footer
 // TODO: Implement dark mode using data-bs-theme="dark" on <html> element https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
 
 function App() {
