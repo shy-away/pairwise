@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { createIndexPairs } from "../utils/helpers";
+import { PHASES } from "../utils/enums";
 
 export default function Ranker({ items, setItems, rankThoughts, setPhase }) {
   const [currentPair, setCurrentPair] = useState(0);
@@ -23,8 +24,7 @@ export default function Ranker({ items, setItems, rankThoughts, setPhase }) {
     if (currentPair + 1 < indexPairs.current.length) {
       setCurrentPair((prev) => prev + 1);
     }
-    // otherwise, move to next phase
-    else setPhase(2);
+    else setPhase(PHASES.RESULTS);
   };
 
   return (
@@ -49,7 +49,7 @@ export default function Ranker({ items, setItems, rankThoughts, setPhase }) {
         <div className="col-12">
           <button
             className="btn btn-sm btn-secondary"
-            onClick={() => setPhase(0)}
+            onClick={() => setPhase(PHASES.INPUT)}
           >
             Back
           </button>

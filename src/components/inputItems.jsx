@@ -1,3 +1,4 @@
+import { PHASES } from "../utils/enums";
 import { newInitializedItem } from "../utils/helpers";
 
 export default function InputItems({
@@ -25,10 +26,11 @@ export default function InputItems({
   };
 
   const handleNext = () => {
-    if (items.length >= 2) setPhase(1);
+    if (items.length >= 2) setPhase(PHASES.RANK);
     else alert(`Please input at least 2 items to compare.`);
     {
       // TODO: replace above alert with proper Bootstrap modal?
+      // TODO: verify that no items have input of empty string
     }
   };
 

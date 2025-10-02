@@ -1,3 +1,5 @@
+import { PHASES } from "../utils/enums";
+
 export default function Results({ items, setPhase }) {
   for (let i = 0; i < items.length; i++) {
     console.log(items[i]);
@@ -14,7 +16,9 @@ export default function Results({ items, setPhase }) {
 
         <div className="col-12 col-lg-6">
           <ul className="text-align-start">
-            {items
+            {
+              // TODO: consider showing tied items differently? or showing winrate somehow?
+            items
               .toSorted((a, b) =>
                 a.winRate > b.winRate ? -1 : b.winRate > a.winRate ? 1 : 0
               )
@@ -27,7 +31,7 @@ export default function Results({ items, setPhase }) {
         <div className="col-12 text-center">
           <button
             className="btn btn-sm btn-secondary"
-            onClick={() => setPhase(0)}
+            onClick={() => setPhase(PHASES.INPUT)}
           >
             Back
           </button>
