@@ -2,7 +2,7 @@ import { PHASES } from "../utils/enums";
 
 export default function About({ setPhase }) {
   return (
-    <div className="container-fluid text-center">
+    <div className="container-fluid text-center text-lg-start">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-10">
           <h1 className="my-4">Rank Anything, One Pair at a Time</h1>

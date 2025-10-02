@@ -5,8 +5,8 @@ import Ranker from "./components/ranker";
 import Results from "./components/results";
 import About from "./components/about";
 import { PHASES } from "./utils/enums";
+import Navbar from "./components/navbar";
 
-// TODO: Create nav component
 // TODO: Create footer
 // TODO: Implement dark mode using data-bs-theme="dark" on <html> element https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
 
@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      <Navbar {...{ setPhase }}/>
       {
         // TODO: delete border later?
       }
