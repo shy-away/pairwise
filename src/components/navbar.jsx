@@ -1,10 +1,15 @@
 import { PHASES } from "../utils/enums";
+import LightDarkToggler from "./lightDarkToggler";
 
 export default function Navbar({ setPhase }) {
   return (
     <div className="navbar navbar-expand-md">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a
+          className="navbar-brand"
+          href="#"
+          onClick={() => setPhase(PHASES.ABOUT)}
+        >
           Pairwise
         </a>
         <button
@@ -19,7 +24,7 @@ export default function Navbar({ setPhase }) {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div id="navbarItems" className="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a
                 href="#"
@@ -37,6 +42,9 @@ export default function Navbar({ setPhase }) {
               >
                 Start Ranking
               </a>
+            </li>
+            <li className="nav-item">
+              <LightDarkToggler />
             </li>
           </ul>
         </div>

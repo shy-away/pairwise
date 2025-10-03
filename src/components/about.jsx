@@ -11,14 +11,9 @@ export default function About({ setPhase }) {
             <a href="https://en.wikipedia.org/wiki/Pairwise_comparison">
               pairwise comparison<i className="bi bi-link-45deg"></i>
             </a>
-            . This ranking method is very versatile, and can be used for
-            anything you can imagine.
-          </p>
-          <p>
-            For example, you might have multiple tasks you need to do, and you
-            need help prioritizing them. You could also use this app to rank
-            colors, TV shows, food, dog breeds, music genres, or really any
-            other group of things that you could have an opinion about.
+            . You could use this app to rank colors, TV shows, food, dog breeds,
+            music genres, or really any other group of things that you could
+            have an opinion about.
           </p>
           <button
             className="btn btn-primary"
@@ -28,9 +23,9 @@ export default function About({ setPhase }) {
           </button>
           <h3 className="mt-5 mb-3">How it Works</h3>
           <p>
-            <div className="fw-medium d-inline">
+            <span className="fw-medium d-inline">
               Start by entering your the items you want to rank.
-            </div>{" "}
+            </span>{" "}
             For example, if you want to rank colors, you could enter "Red" for
             one item, "Orange" for the next, etc. You can add as many items as
             you like using the "Add Item" button. If you add too many items, you
@@ -39,8 +34,8 @@ export default function About({ setPhase }) {
           </p>
           <p>
             Optionally, you can use a custom{" "}
-            <div className="fw-medium d-inline">Ranking Question</div>. This is
-            basically a reminder to yourself about how you want to rank your
+            <span className="fw-medium d-inline">Ranking Question</span>. This
+            is basically a reminder to yourself about how you want to rank your
             items. For example, if you want to rank songs by how much you think
             one of your friends might like them, you could enter a custom
             question of, "Which song do I think my friend would like?" and the
@@ -49,9 +44,9 @@ export default function About({ setPhase }) {
             message of "Pick One..." when you're ranking items.
           </p>
           <p>
-            <d className="fw-medium d-inline">
+            <span className="fw-medium d-inline">
               Next -- the fun part -- rank your items!
-            </d>{" "}
+            </span>{" "}
             You'll be presented each <em>pair</em> of items once, and you'll
             pick whichever of those two items aligns better, in your opinion,
             with how you want to rank them. Another example: If you're ranking
@@ -60,9 +55,9 @@ export default function About({ setPhase }) {
             those things are cool. :P
           </p>
           <p>
-            <div className="fw-medium d-inline">
+            <span className="fw-medium d-inline">
               Finally, you'll see the results,
-            </div>{" "}
+            </span>{" "}
             where all your items will be ranked based on how often you chose
             each item. If you were ranking aspects of a car that you'd consider
             when bying one (like price, brand, mileage, etc.), you might
