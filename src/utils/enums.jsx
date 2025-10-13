@@ -1,6 +1,6 @@
 export const PHASES = {
-  ABOUT: Symbol("About"),
-  INPUT: Symbol("Input"),
-  RANK: Symbol("Rank"),
-  RESULTS: Symbol("Results"),
+  ABOUT: "ABOUT",
+  INPUT: "INPUT",
+  RANK: "RANK",
+  RESULTS: "RESULTS",
 };
